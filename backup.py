@@ -18,8 +18,12 @@ def create_bckp(source_dir, extensions, output_dir, archive_type):
         for file_path in files_to_backup:
             archive.add(file_path, arcname=file_path.relative_to(source_dir))
     print(f"Archive created: {archive_name}")
-    
+def restore_backup(archive_path, output_dir):
+    with tarfile.open(archive_path, "r:*") as archive:
+        archive.extractall(output_dir)
+    print(f"Archive restored to {output_dir}")    
 if __name__ == "__main__":
     prsr = argparse.ArgumentParser(description="Backup or restore files.")
     prsr.add_argument("operation", choices=["c", "d"], help="Operation: 'c' to compress or 'd' to decompress.")
     args = prsr.parse_args()
+    
