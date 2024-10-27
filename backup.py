@@ -33,4 +33,6 @@ if __name__ == "__main__":
             input("Output directory: "),
             input("Archive type (xz/bz2/gz): ")
         )
-    
+    else:
+        restore_backup(input("Archive file: "), input("Output directory: "))
+
