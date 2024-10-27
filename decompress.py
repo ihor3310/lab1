@@ -14,6 +14,9 @@ def decompress_file(archive_path, output_dir):
     elif archive_type == ".zip":
         with zipfile.ZipFile(archive_path, "r") as archive:
             archive.extractall(output_dir)
+
+    print(f"Archive decompressed to: {output_dir}")
+
 if __name__ == "__main__":
     archive_path = input("Source archive file: ")
     output_dir = input("Output directory: ")
