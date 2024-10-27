@@ -7,3 +7,5 @@ if __name__ == "__main__":
     archive_path = input("Source archive file: ")
     output_dir = input("Output directory: ")
     decompress_file(archive_path, output_dir)
+if archive_type == ".gz":
+        output_path = pathlib.Path(output_dir) / pathlib.Path(archive_path).stem
