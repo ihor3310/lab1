@@ -28,3 +28,9 @@ if __name__ == "__main__":
     args = prsr.parse_args()
     if args.operation == "c":
         create_backup(
+            input("Source directory: "),
+            input("Files to process (extensions): ").split(),
+            input("Output directory: "),
+            input("Archive type (xz/bz2/gz): ")
+        )
+    
