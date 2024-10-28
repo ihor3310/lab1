@@ -27,7 +27,7 @@ if __name__ == "__main__":
     prsr.add_argument("operation", choices=["c", "d"], help="Operation: 'c' to compress or 'd' to decompress.")
     args = prsr.parse_args()
     if args.operation == "c":
-        create_backup(
+        create_bckp(
             input("Source directory: "),
             input("Files to process (extensions): ").split(),
             input("Output directory: "),
